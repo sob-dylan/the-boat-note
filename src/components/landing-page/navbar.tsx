@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
           <Button >Login</Button>
 
           <Button >Sign Up</Button>
-          <ModeToggle />
+          <ModeToggle size="lg"/>
 
         </div>
       </div>

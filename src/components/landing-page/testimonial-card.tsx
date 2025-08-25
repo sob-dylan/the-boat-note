@@ -1,5 +1,5 @@
 "use client";
-import { Card } from "@/components/ui/card";
+// import { Card } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -66,9 +66,9 @@ const TestimonialCarousel = () => {
                   {testobj.name + ", " + testobj.jobTitle}
                 </div>
               </div>
-              <div className="border-l w-[150px] relative h-[150px]">
+              <div className="relative sm:w-[150px] w-[100px] h-[150px]">
                 <Image
-                  className="relative"
+                  className=""
                   src={testobj.avatar}
                   alt="avatar"
                   fill

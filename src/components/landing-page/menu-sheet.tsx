@@ -32,7 +32,7 @@ const HamburgerIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
 );
 
 const MenuSheet: React.FC = () => {
-  const scrolled = useScrollTop(20);
+  const scrolled = useScrollTop(75);
   return (
     <>
       {/* // Hidden on md and above */}
@@ -108,7 +108,7 @@ const MenuSheet: React.FC = () => {
                   </Link>
                 </SheetClose>
                 <div className="block text-left px-4 py-2 mb-4 w-full rounded hover:bg-gray-100 dark:hover:bg-gray-800">
-                <ModeToggle/>
+                <ModeToggle text="Change Theme"/>
                 </div>
                   
               </nav>
