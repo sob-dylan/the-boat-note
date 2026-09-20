@@ -56,20 +56,24 @@ const MenuSheet: React.FC = () => {
               </SheetHeader>
               <nav className="flex flex-col gap-6 mt-6">
                 <SheetClose asChild>
-                  <button className="text-left px-4 py-2 w-full rounded hover:bg-gray-100 dark:hover:bg-gray-800">
-                    Login
-                  </button>
+                  <Link href={"/login"}>
+                    <button className="text-left px-4 py-2 w-full rounded hover:bg-gray-100 dark:hover:bg-gray-800">
+                      Login
+                    </button>
+                  </Link>
                 </SheetClose>
                 <SheetClose asChild>
-                  <button className="text-left px-4 py-2 w-full rounded hover:bg-gray-100 dark:hover:bg-gray-800">
-                    Sign Up
-                  </button>
+                  <Link href={"/signup"}>
+                    <button className="text-left px-4 py-2 w-full rounded hover:bg-gray-100 dark:hover:bg-gray-800">
+                      Sign Up
+                    </button>
+                  </Link>
                 </SheetClose>
                 <SheetClose asChild>
-                  {/* Replace with actual theme switcher logic */}
-                  <button className="text-left px-4 py-2 w-full rounded hover:bg-gray-100 dark:hover:bg-gray-800">
-                    Theme
-                  </button>
+                  
+                  <div className="block text-left px-4 py-2 mb-4 w-full rounded hover:bg-gray-100 dark:hover:bg-gray-800">
+                    <ModeToggle  />
+                  </div>
                 </SheetClose>
               </nav>
             </SheetContent>
@@ -78,7 +82,7 @@ const MenuSheet: React.FC = () => {
       </div>
       {scrolled && (
         <div className="hidden md:flex fixed top-1.5 right-4 z-50 p-4 ">
-          <Sheet >
+          <Sheet>
             <SheetTrigger asChild>
               <Button
                 aria-label="Open menu"
@@ -88,40 +92,47 @@ const MenuSheet: React.FC = () => {
                 Menu <HamburgerIcon />
               </Button>
             </SheetTrigger>
-              <div className="flex-col justify-between">
-            <SheetContent side="right" className="w-64 flex-col">
-              <SheetHeader>
-                <SheetTitle>
-                  <Logo />
-                </SheetTitle>
-              </SheetHeader>
-              <nav className="flex-grow flex-col gap-6 mt-6 ">
-                
-                <SheetClose asChild>
-                  <Link href="/login" className=" block text-left px-4 py-2 mb-4 w-full rounded hover:bg-gray-100 dark:hover:bg-gray-800">
-                    Login
+            <div className="flex-col justify-between">
+              <SheetContent side="left" className="w-64 flex-col">
+                <SheetHeader>
+                  <SheetTitle>
+                    <Logo />
+                  </SheetTitle>
+                </SheetHeader>
+                <nav className="flex-grow flex-col gap-6 mt-6 ">
+                  <SheetClose asChild>
+                    <Link
+                      href="/login"
+                      className=" block text-left px-4 py-2 mb-4 w-full rounded hover:bg-gray-100 dark:hover:bg-gray-800"
+                    >
+                      Login
+                    </Link>
+                  </SheetClose>
+                  <SheetClose asChild>
+                    <Link
+                      href="/signup"
+                      className=" block text-left px-4 py-2 mb-4 w-full rounded hover:bg-gray-100 dark:hover:bg-gray-800"
+                    >
+                      Sign Up
+                    </Link>
+                  </SheetClose>
+                  <div className="block text-left px-4 py-2 mb-4 w-full rounded hover:bg-gray-100 dark:hover:bg-gray-800">
+                    <ModeToggle  />
+                  </div>
+                </nav>
+                <div className="flex m-4">
+                  <Link href="/termsandconditions" className="underline m-4">
+                    Terms & Conditions
                   </Link>
-                </SheetClose>
-                <SheetClose asChild>
-                  <Link href="/signup" className=" block text-left px-4 py-2 mb-4 w-full rounded hover:bg-gray-100 dark:hover:bg-gray-800">
-                    Sign Up
+
+                  <Link href="/privacy-policy" className="underline m-4">
+                    Privacy Policy
                   </Link>
-                </SheetClose>
-                <div className="block text-left px-4 py-2 mb-4 w-full rounded hover:bg-gray-100 dark:hover:bg-gray-800">
-                <ModeToggle text="Change Theme"/>
                 </div>
-                  
-              </nav>
-              <div className="flex m-4">
-                <Link href="/termsandconditions" className="underline m-4">Terms & Conditions</Link>
-                
-                <Link href="/privacy-policy" className="underline m-4">Privacy Policy</Link>
-              </div>
-            </SheetContent>
-              </div>
-        
+              </SheetContent>
+            </div>
           </Sheet>
-          </div>
+        </div>
       )}
     </>
   );

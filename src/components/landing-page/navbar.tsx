@@ -6,6 +6,7 @@ import { ModeToggle } from "../mode-toggle";
 import { useState, MouseEventHandler } from "react";
 import MenuSheet from "./menu-sheet";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 // HamburgerIcon props type
 interface HamburgerIconProps {
@@ -30,13 +31,16 @@ const Navbar: React.FC = () => {
         
        {/* <HamburgerIcon onClick={() => setMenu Open(true)} /> */}
         <div className="hidden md:flex items-center gap-x-2">
-          <Button variant="ghost" className="mr-[-10px]">Testimonials</Button>
-          <Button variant="ghost" className="ml-0">Plans</Button>
+          <Button variant="ghost" className="mr-[-10px] hover:cursor-pointer">Testimonials</Button>
+          <Button variant="ghost" className="ml-0 hover:cursor-pointer">Plans</Button>
 
 
-          <Button >Login</Button>
-
-          <Button >Sign Up</Button>
+          <Link href={"/login"}>
+          <Button className="hover:cursor-pointer">Login</Button>
+          </Link>
+          <Link href={"/signup"}>
+          <Button className="hover:cursor-pointer">Sign Up</Button>
+          </Link>
           <ModeToggle size="lg"/>
 
         </div>

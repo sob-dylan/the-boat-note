@@ -75,7 +75,7 @@
   --card-foreground: hsl(240, 10%, 3.9%);
   --popover: hsl(0, 0%, 100%);
   --popover-foreground: hsl(240, 10%, 3.9%);
-  --primary: hsl(142.1, 76.2%, 36.3%);
+  --primary: oklch(0.484 0.164 145.0);
   --primary-foreground: hsl(355.7, 100%, 97.3%);
   --secondary: hsl(240, 4.8%, 95.9%);
   --secondary-foreground: hsl(240, 5.9%, 10%);
@@ -87,7 +87,7 @@
   --destructive-foreground: hsl(0, 0%, 98%);
   --border: hsl(240, 5.9%, 90%);
   --input: hsl(240, 5.9%, 90%);
-  --ring: hsl(142.1, 76.2%, 36.3%);
+  --ring: oklch(0.7227 0.192 149.58);
   --radius: 0.3rem;
   --chart-1: hsl(12, 76%, 61%);
   --chart-2: hsl(173, 58%, 39%);
@@ -132,7 +132,7 @@
   --card-foreground: hsl(0, 0%, 95%);
   --popover: hsl(0, 0%, 9%);
   --popover-foreground: hsl(0, 0%, 95%);
-  --primary: hsl(142.1, 70.6%, 45.3%);
+  --primary: rgb(34, 197, 94);
   --primary-foreground: hsl(144, 76%, 15%);
   --secondary: hsl(240, 3.7%, 15.9%);
   --secondary-foreground: hsl(0, 0%, 98%);
@@ -184,6 +184,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
     letter-spacing: var(--tracking-normal);
@@ -194,8 +195,8 @@
   0% {
     transform: translateX(-100%);
   }
+
   100% {
     transform: translateX(0);
   }
 }
-
